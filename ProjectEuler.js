@@ -1,17 +1,29 @@
-/* 
-    i değişkeni, if yapısının içerisindeki koşulu sağlayıncaya kadar, 
-    while dögüsünün içerisinde sürekli artarak devam edecek,
-    if içerisindeki şartı sağlayan i değeri konsola yazdırılacak ve 
-    break yapısı ile ilk değer bulunduktan sonra döngüden çıkılacaktır. 
-*/
-
-let i=1;
-while(i>=1){
-    if(i%5==0 && i%7==0 && i%16==0 && i%9==0 && i%11==0 && i%13==0 && i%17==0 && i%19==0){
-        console.log(i);
-        break;
+    /*
+    problemFive fonksiyonuna hangi sayıyı parametre olarak gönderirsek, 1 ile parametre sayı arasındaki
+    tüm sayılara bölünebilen en küçük sayıyı bulur.
+    */
+function problemFive(n){
+let times = 0;
+let num=1;
+  while(times < n){
+    for(let i=1; i<=n; i++){ 
+        if(num%i==0){ //num değişkeni tüm i değerlerine bölünecek sayı olana kadar times 0'a eşitlenir
+            times++ 
+        }else{     
+            times=0;
+            break;
+        }
     }
-    i++;       
+    if(times==n){ //doğru sayıyı bulana kadar times n den küçük olacağı için num değişkeni her seferinde bir artar.
+        console.log(num)
+        break;
+    }else{
+        num++;
+    }
+  } 
 }
 
-//cevap: 232792560
+problemFive(20);
+
+
+
